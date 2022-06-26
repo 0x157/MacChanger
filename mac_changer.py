@@ -2,11 +2,8 @@ import random
 from time import sleep
 import subprocess
 from rich.console import Console
-from colorama import Fore
-
 
 console = Console()
-
 
 class Spoof:
     def __init__(self) -> None:
@@ -35,7 +32,8 @@ class Spoof:
                                |_|
            [/{random_color}]""", style="blink")
 
-
+        
+    # Could make it a "spoofer" if you gen random macs and put it inside the while loop.
     @staticmethod
     def mac_change() -> None:
         while True:
