@@ -1,9 +1,11 @@
+# Adding CLI Args soon
 import random
 from time import sleep
 import subprocess
 from rich.console import Console
 
 console = Console()
+loop = True
 
 class Spoof:
     def __init__(self) -> None:
@@ -36,10 +38,9 @@ class Spoof:
     # Could make it a "spoofer" if you gen random macs and put it inside the while loop.
     @staticmethod
     def mac_change() -> None:
-        while True:
+        while loop:
             try:
-                new_mac = input("Enter new Mac Address >@ ")
-                print()
+                new_mac = input("Enter new Mac Address >@ \n")
                 subprocess.call("ifconfig " + " eth0" + " down", shell=True)
                 subprocess.call("ifconfig " + " eth0 " + " hw ether " + new_mac, shell=True)
                 subprocess.call("ifconfig " + " eth0 " + " up", shell=True)
