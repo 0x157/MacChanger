@@ -40,7 +40,8 @@ class Spoof:
     def mac_change() -> None:
         while loop:
             try:
-                new_mac = input("Enter new Mac Address >@ \n")
+                new_mac = input("Enter new Mac Address >@ ")
+                print()
                 subprocess.call("ifconfig " + " eth0" + " down", shell=True)
                 subprocess.call("ifconfig " + " eth0 " + " hw ether " + new_mac, shell=True)
                 subprocess.call("ifconfig " + " eth0 " + " up", shell=True)
